@@ -48,7 +48,15 @@ function Header() {
           navigate('/login')
         }}>Log out</span>}
 
-        <Link to={'/sell'}>
+        {user ? <Link to={'/sell'}>
+          <div className="sellMenu">
+            <SellButton></SellButton>
+            <div className="sellMenuContent">
+              <SellButtonPlus></SellButtonPlus>
+              <span>SELL</span>
+            </div>
+          </div>
+        </Link> : <Link to={'/login'}>
           <div className="sellMenu">
             <SellButton></SellButton>
             <div className="sellMenuContent">
@@ -57,6 +65,7 @@ function Header() {
             </div>
           </div>
         </Link>
+        }
 
       </div>
     </div>
